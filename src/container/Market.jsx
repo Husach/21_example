@@ -73,7 +73,7 @@ const goodsData = [
         cost: 249,
         discountCost: null,
         new: false,
-        img: '../img/goods/Layer319.png'
+        img: '../img/goods/Layer311.png'
     }
 ]
 

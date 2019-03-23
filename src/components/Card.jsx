@@ -18,7 +18,7 @@ class Card extends Component {
                 <img
                     alt="card-img"
                     className="card__img-inner"
-                    src={this.props.item.img}
+                    src={process.env.PUBLIC_URL + this.props.item.img}
                 />
                 {this.renderSale()}
                 {this.renderNew()}
