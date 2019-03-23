@@ -1,0 +1,31 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 38px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: uppercase;
+    background: transparent;
+    border: 1px solid var(--card-color);
+    outline: none;
+    cursor: pointer;
+    transition: all 0.24s ease;
+}
+
+.btn--add {
+    color: #ed1111;
+}
+
+.btn--add:hover {
+    background-color: #ed8e8e;
+}
+
+.btn--view {
+    font-size: 12px;
+    font-weight: 300;
+    color: #999e9f;
+    background-color: #d9d9d9;
+}

@@ -3,13 +3,13 @@ import './App.css';
 import Market from './components/market'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Market />
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <Market />
+            </div>
+        );
+    }
 }
 
 export default App;
