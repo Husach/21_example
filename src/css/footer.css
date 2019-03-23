@@ -1,0 +1,114 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 15px;
+    margin-bottom: 50px;
+}
+
+.footer-block {
+    width: 270px;
+    padding: 40px 25px 55px;
+    margin: 0 15px 20px;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+}
+
+.footer-block__title {
+    color: #333;
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 58px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.footer-block__text {
+    height: 45px;
+    color: #a5a4a4;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 15px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.footer-block__list {
+    padding-left: 0;
+}
+
+.footer-block__item {
+    position: relative;
+    padding-left: 15px;
+    color: #a5a4a4;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 25px;
+    list-style-type: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.footer-block__item::before {
+    position: absolute;
+    content: '';
+    top: 6px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: url("../img/svg/item-right.svg") center center no-repeat;
+}
+
+.footer-block__item--location,
+.footer-block__item--phone,
+.footer-block__item--email,
+.footer-block__item--skype {
+    padding-left: 35px;
+    min-height: 40px;
+    text-align: left;
+    white-space: normal;
+
+}
+
+.footer-block__item--email {
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-block__item--location::before,
+.footer-block__item--phone::before,
+.footer-block__item--email::before,
+.footer-block__item--skype::before {
+    top: -3px;
+    width: 30px;
+    height: 30px;
+}
+
+.footer-block__item--location::before {
+    background: url("../img/svg/map.svg") left center no-repeat;
+}
+
+.footer-block__item--phone::before {
+    background: url("../img/svg/phone.svg") left center no-repeat;
+}
+
+.footer-block__item--email::before {
+    background: url("../img/svg/email.svg") left center no-repeat;
+}
+
+.footer-block__item--skype::before {
+    background: url("../img/svg/skype.svg") left center no-repeat;
+}
+
+.footer-block__email {
+    color: #a3a6a6;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 450px) {
+    .footer-block {
+        width: 370px;
+    }
+}

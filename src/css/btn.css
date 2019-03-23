@@ -15,11 +15,11 @@
     transition: all 0.24s ease;
 }
 
-.btn--add {
+.btn--basic {
     color: #ed1111;
 }
 
-.btn--add:hover {
+.btn--basic:hover {
     background-color: #ed8e8e;
 }
 

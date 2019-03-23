@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import Market from './components/market'
+import Market from './container/Market'
+import Footer from "./container/Footer";
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <Market />
+                <div className="wrapper">
+                    <Market />
+                    <Footer />
+                </div>
             </div>
         );
     }

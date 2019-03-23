@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class BtnAdd extends Component {
+class Btn extends Component {
 
     handlerClick() {
 
@@ -9,13 +9,13 @@ class BtnAdd extends Component {
     render() {
         return (
             <button
-                className="btn btn--add"
+                className="btn btn--basic"
                 onClick={this.handlerClick()}
             >
-                Add to cart
+                {this.props.title}
             </button>
         )
     }
 }
 
-export default BtnAdd;
+export default Btn;

@@ -1,5 +1,12 @@
 .market {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
     padding: 30px 15px;
+}
+
+.load-more {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
 }
