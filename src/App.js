@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import Market from './components/market'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <div>test</div>
-        </header>
+        <Market />
       </div>
     );
   }
