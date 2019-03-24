@@ -78,6 +78,8 @@ const goodsData = [
 ]
 
 class Market extends Component {
+
+
     render() {
         return (
             <Fragment>

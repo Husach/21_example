@@ -1,8 +1,23 @@
 import React, { Component } from "react";
 import Btn from "./Btn";
 import BtnView from "./BtnView";
+import Modal from 'simple-react-modal';
 
 class Card extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isModalOpen: false
+        }
+    }
+
+    handlerBtnViewClick() {
+        this.setState({isModalOpen : !this.state.isModalOpen})
+    }
+
+    modalClose() {
+        this.setState({isModalOpen : !this.state.isModalOpen})
+    }
 
     renderSale() {
         return this.props.item.discountCost !== null ? <div className="card__type card__sale">Sale</div> : null;
@@ -45,9 +60,30 @@ class Card extends Component {
     renderControl() {
         return (
             <div className="card__control">
-                <Btn title="Add to cart"/>
-                <BtnView />
+                <Btn
+                    handlerBtnClick={() => {
+                        this.setState({isModalOpen : true})
+                    }}
+                    title="Add to cart"/>
+                <BtnView
+                    handlerBtnViewClick={() => {
+                        this.setState({isModalOpen : true})
+                    }}
+                />
             </div>
+        )
+    }
+
+    renderModal() {
+        return (
+            <Modal
+                show={this.state.isModalOpen}
+                onClose={() => {
+                    this.setState({isModalOpen : false})
+                }}
+                transitionSpeed={500}>
+                <div>Данный функционал находится в разработке и появится в ближайшее время</div>
+            </Modal>
         )
     }
 
@@ -59,6 +95,7 @@ class Card extends Component {
                 <div className="card__description">{this.props.item.description}</div>
                 {this.renderPrice()}
                 {this.renderControl()}
+                {this.renderModal()}
             </div>
         )
     }
