@@ -50,9 +50,16 @@ class Card extends Component {
                 </div>
             )
         }
+        if (this.props.item.cost) {
+            return (
+                <div className="card__price">
+                    <div className="card__costDis">${this.props.item.cost}.00</div>
+                </div>
+            )
+        }
         return (
             <div className="card__price">
-                <div className="card__costDis">${this.props.item.cost}.00</div>
+                <div className="card__costDis">{this.props.item.cost}</div>
             </div>
         )
     }
