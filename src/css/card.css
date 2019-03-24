@@ -10,7 +10,7 @@
     border: 1px solid var(--card-color);
     box-shadow: none;
     box-sizing: border-box;
-    transition: opacity 0.24s ease;
+    transition: all 0.24s ease;
     animation: opacity-animation 2s alternate;
 }
 
