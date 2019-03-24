@@ -24,16 +24,12 @@ class StoreInfo extends Component {
                     <li className="footer-block__item footer-block__item--email">
                         <div>Customer support:
                             <a href="mailto:support@example.com"
-                               target="_blank"
-                               rel="noopener noreferrer"
                                className="footer-block__email">
                                 support@example.com
                             </a>
                         </div>
                         <div>Press:
-                            <a href="pressroom@example.com"
-                               target="_blank"
-                               rel="noopener noreferrer"
+                            <a href="maito:pressroom@example.com"
                                className="footer-block__email">
                                 pressroom@example.com</a>
                         </div>
