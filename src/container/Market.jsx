@@ -95,35 +95,55 @@ class Market extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            page: 1
+            page: 1,
+            showedGoods: [],
+            allShowed: false
         };
-        this.goods = [];
         this.showedGoods = [];
         this.nextGoods = [];
+        this.goods = [];
     }
 
 
     componentWillMount() {
-        goodsData.map((item, index) =>
-            this.goods[index] = item
-        );
+        goodsData.map((item, index) => this.goods[index] = item);
 
         for(let i = 0; i < this.state.page * 4; i++ ) {
-            this.showedGoods[i] = this.goods[i];
+            if (this.goods[i]) this.showedGoods[i] = this.goods[i];
         }
 
-        console.log("goods", this.goods);
-        this.setState({page: this.state.page++},
-            () => {
-                this.setNextGoods();
-            })
+        this.setState({showedGoods: this.showedGoods}, () => {this.setNextGoods()})
     }
 
     setNextGoods() {
-        for(let i = ((this.state.page - 1) * 4); i < this.state.page * 4; i++ ) {
-            this.showedGoods[i] = this.goods[i];
+        console.log(this.state.lastItem);
+        this.setState({page: this.state.page + 1}, () => {
+            for(let i = 0; i < 4; i++ ) {
+                if (this.goods[((this.state.page - 1) * 4) + i]) {
+                    this.nextGoods[i] = this.goods[((this.state.page - 1) * 4) + i];
+                }
+            }
+        });
+
+        if (goodsData.length === this.state.showedGoods.length) this.setState({allShowed: true})
+    }
+
+    loadMoreHandler() {
+        this.showedGoods = this.showedGoods.concat(this.nextGoods);
+        this.nextGoods = [];
+        this.setState({showedGoods: this.showedGoods}, () => {this.setNextGoods()});
+    }
+
+    renderLoadMore() {
+        if (!this.state.allShowed) {
+            return (
+                <div className="load-more">
+                    <Btn handlerBtnClick={this.loadMoreHandler.bind(this)}
+                         title="Load more"/>
+                </div>
+            )
         }
-        console.log("nextGoods", this.nextGoods);
+        return null;
     }
 
     render() {
@@ -134,9 +154,7 @@ class Market extends Component {
                         <Card item={item} key={index} />
                     )}
                 </div>
-                <div className="load-more">
-                    <Btn title="Load more"/>
-                </div>
+                {this.renderLoadMore()}
             </Fragment>
         )
     }

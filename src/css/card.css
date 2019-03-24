@@ -10,7 +10,8 @@
     border: 1px solid var(--card-color);
     box-shadow: none;
     box-sizing: border-box;
-    transition: all 0.24s ease;
+    transition: opacity 0.24s ease;
+    animation: opacity-animation 2s alternate;
 }
 
 .card:hover {
@@ -99,4 +100,9 @@
     display: flex;
     justify-content: space-between;
     margin-top: 17px;
+}
+
+@keyframes opacity-animation {
+    from { opacity: 0}
+    to  {opacity: 1}
 }

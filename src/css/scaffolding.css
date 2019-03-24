@@ -21,3 +21,13 @@ code {
 .wrapper {
     max-width: 1250px;
 }
+
+.modal div {
+    width: 200px !important;
+}
+
+@media only screen and (min-width: 450px) {
+    .modal div {
+        width: 400px !important;
+    }
+}

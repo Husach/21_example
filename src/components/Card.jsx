@@ -60,16 +60,8 @@ class Card extends Component {
     renderControl() {
         return (
             <div className="card__control">
-                <Btn
-                    handlerBtnClick={() => {
-                        this.setState({isModalOpen : true})
-                    }}
-                    title="Add to cart"/>
-                <BtnView
-                    handlerBtnViewClick={() => {
-                        this.setState({isModalOpen : true})
-                    }}
-                />
+                <Btn handlerBtnClick={() => {this.setState({isModalOpen : true})}} title="Add to cart"/>
+                <BtnView handlerBtnViewClick={() => {this.setState({isModalOpen : true})}} />
             </div>
         )
     }
@@ -77,12 +69,11 @@ class Card extends Component {
     renderModal() {
         return (
             <Modal
+                class="modal"
                 show={this.state.isModalOpen}
-                onClose={() => {
-                    this.setState({isModalOpen : false})
-                }}
+                onClose={() => {this.setState({isModalOpen : false})}}
                 transitionSpeed={500}>
-                <div>Данный функционал находится в разработке и появится в ближайшее время</div>
+                <div className="modal__text">Данный функционал находится в разработке и появится в ближайшее время</div>
             </Modal>
         )
     }
